@@ -6,6 +6,11 @@
     <title>Learn Threejs</title>
   </head>
 
+  <style media="screen">
+  body { margin: 0; }
+    canvas { width: 100%; height: 100%; background: white; }
+  </style>
+
   <body>
     <script type="text/javascript" src="three.min.js"></script>
     <script type="text/javascript">
@@ -26,6 +31,7 @@
         // Take from current postion and rotate
         cube.rotation.z += angularChange;
         // cube.rotation.x -= angularChange;
+        // cube.rotation.y += angularChange;
 
         // Will now equal current time so that the next time around, it finds the
         // difference in time
