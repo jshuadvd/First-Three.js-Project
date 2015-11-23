@@ -29,7 +29,17 @@
     // X = Left & Right
     camera.rotation.x = .75;
 
+    // Create a new Threejs scene
+    var scene = new THREE.Scene();
 
+    // Create a new Plane Object
+    var plane = THREE.Mesh(new THREE.PlaneGeometry(300, 300, new THREE.MeshNormalMaterial()));
+
+    // Add Plane to Scene
+    scene.add(plane);
+
+    // Render this scene using this camera as a rendering point
+    renderer.render(scene, camera);
     </script>
   </body>
 </html>
