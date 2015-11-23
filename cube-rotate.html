@@ -47,7 +47,7 @@
       }
 
       // Create a Render Engine and make it the full browser window size
-      var renderer = new THREE.WebGLRenderer();
+      var renderer = new THREE.WebGLRenderer({ alpha: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
 
       // Take the renderer and append it to the body of the page
