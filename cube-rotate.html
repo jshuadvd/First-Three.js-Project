@@ -21,11 +21,11 @@
         var timeDiff = time - lastTime;
 
         // How much the angle changes
-        //
         var angularChange = angularSpeed * timeDiff * 2 * Math.PI / 1000;
 
-        // Take from current postion and move
+        // Take from current postion and rotate
         cube.rotation.z += angularChange;
+        // cube.rotation.x -= angularChange;
 
         // Will now equal current time so that the next time around, it finds the
         // difference in time
@@ -34,7 +34,7 @@
         // Render this scene using this camera as a rendering point
         renderer.render(scene, camera);
 
-        // When the function renders
+        // When the function renders repeat process
         requestAnimationFrame(function() {
           animate();
         });
@@ -50,15 +50,12 @@
       // Create Camera Object
       var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
 
-
       // Set Cameras Position and rotation
 
       // Y = Near & Far
       camera.position.y = -450;
-
       // Z = Up & Down
       camera.position.z = 400;
-
       // X = Left & Right
       // this formula gives me a 45 degree angle
       camera.rotation.x = 45 * Math.PI / 180;
