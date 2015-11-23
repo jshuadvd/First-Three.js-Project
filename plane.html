@@ -18,6 +18,7 @@
     // Create Camera Object
     var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
 
+
     // Set Cameras Position and rotation
 
     // Y = Near & Far
@@ -33,7 +34,7 @@
     var scene = new THREE.Scene();
 
     // Create a new Plane Object
-    var plane = THREE.Mesh(new THREE.PlaneGeometry(300, 300, new THREE.MeshNormalMaterial()));
+    var plane = new THREE.Mesh(new THREE.PlaneGeometry(300, 300, new THREE.MeshNormalMaterial()));
 
     // Add Plane to Scene
     scene.add(plane);
