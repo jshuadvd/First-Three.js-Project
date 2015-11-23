@@ -28,7 +28,8 @@
     camera.position.z = 400;
 
     // X = Left & Right
-    camera.rotation.x = .75;
+    // this formula gives me a 45 degree angle
+    camera.rotation.x = 45 * Math.PI / 180;
 
     // Create a new Threejs scene
     var scene = new THREE.Scene();
@@ -41,7 +42,7 @@
       200, 200, 200), new THREE.MeshNormalMaterial());
 
     // Add Cube to Scene & Rotate
-    cube.rotation.z = .75;
+    cube.rotation.z = 45 * Math.PI / 180;
     scene.add(cube);
 
     // Render this scene using this camera as a rendering point
