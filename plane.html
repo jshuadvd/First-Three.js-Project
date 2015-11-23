@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Learn Threejs</title>
   </head>
   <body>
     <script type="text/javascript" src="three.min.js"></script>
@@ -17,6 +17,19 @@
 
     // Create Camera Object
     var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+
+    // Set Cameras Position and rotation
+
+    // Y = Near & Far
+    camera.position.y = -450;
+
+    // Z = Up & Down
+    camera.position.z = 400;
+
+    // X = Left & Right
+    camera.rotation.x = .75;
+
+
     </script>
   </body>
 </html>
