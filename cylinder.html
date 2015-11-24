@@ -83,7 +83,8 @@
       // Create a new sphere Object
       var cyl = new THREE.Mesh(new THREE.CylinderGeometry(
         100, 50, 250, 30, 30, false), new THREE.MeshLambertMaterial({
-        color: '#0099ff'
+        color: '#0099ff',
+        wireframe: true
       }));
       scene.add(cyl);
 
