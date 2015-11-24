@@ -29,7 +29,8 @@
         var angularChange = angularSpeed * timeDiff * 2 * Math.PI / 1000;
 
         // Take from current postion and rotate
-        cube.rotation.z += angularChange;
+        // cube.rotation.z += angularChange;
+        sphere.rotation.z += angularChange;
         // cube.rotation.x -= angularChange;
         // cube.rotation.y += angularChange;
 
@@ -72,11 +73,18 @@
       // Create a new Plane Object
       // var plane = new THREE.Mesh(new THREE.PlaneGeometry(300, 300, new THREE.MeshNormalMaterial()));
 
-      // Create a new cube Object
-      var cube = new THREE.Mesh(new THREE.CubeGeometry(
-        200, 200, 200), new THREE.MeshLambertMaterial({
+      // Create a new Cube Object
+      // var cube = new THREE.Mesh(new THREE.CubeGeometry(
+      //   200, 200, 200), new THREE.MeshLambertMaterial({
+      //   color: '#0CE19B'
+      // }));
+
+      // Create a new sphere Object
+      var sphere = new THREE.Mesh(new THREE.SphereGeometry(
+        150, 10, 10), new THREE.MeshLambertMaterial({
         color: '#0CE19B'
       }));
+      scene.add(sphere);
 
       // Create Directional light for out object
       var light = new THREE.DirectionalLight('#0CE19B', 1.7);
@@ -84,8 +92,8 @@
       scene.add(light);
 
       // Add Cube to Scene & Rotate
-      cube.rotation.z = 45 * Math.PI / 180;
-      scene.add(cube);
+      // cube.rotation.z = 45 * Math.PI / 180;
+      // scene.add(cube);
 
       animate();
     </script>
