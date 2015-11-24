@@ -30,7 +30,8 @@
 
         // Take from current postion and rotate
         // cube.rotation.z += angularChange;
-        cyl.rotation.z += angularChange;
+        // cyl.rotation.z += angularChange;
+        cyl.rotation.x += angularChange;
         // cube.rotation.x -= angularChange;
         // cube.rotation.y += angularChange;
 
@@ -80,14 +81,14 @@
       // }));
 
       // Create a new sphere Object
-      var cyl = new THREE.Mesh(new THREE.SphereGeometry(
-        150, 24, 24), new THREE.MeshLambertMaterial({
-        color: '#0CE19B'
+      var cyl = new THREE.Mesh(new THREE.CylinderGeometry(
+        100, 50, 250, 30, 30, false), new THREE.MeshLambertMaterial({
+        color: '#0099ff'
       }));
       scene.add(cyl);
 
       // Create Directional light for out object
-      var light = new THREE.DirectionalLight('#0CE19B', 1.7);
+      var light = new THREE.DirectionalLight('#0099ff', 2.0);
       light.position.set(0, -400, 400).normalize();
       scene.add(light);
 
