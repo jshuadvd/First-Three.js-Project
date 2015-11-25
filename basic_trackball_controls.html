@@ -27,7 +27,7 @@
         scene,
         renderer;
 
-      // call the main functions to render and animate Threejs
+      // Call the main functions to render and animate Threejs
       init();
       animate();
 
@@ -42,6 +42,9 @@
         // Everytime something changes with the control the script will update
         // and re-render the scene
         controls.addEventListener('change', render);
+
+        // Create the world / Scene
+        var scene = new THREE.Scene();
       }
     </script>
   </body>
