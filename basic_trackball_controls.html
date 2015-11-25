@@ -21,17 +21,19 @@
     <script src="TrackballControls.js" type="text/javascript"></script>
     <script type="text/javascript">
 
+      // Create the main threejs components
       var camera,
         controls,
         scene,
         renderer;
 
+      // call the main functions to render and animate Threejs
       init();
       animate();
 
       function init() {
-        camera = new THREE.PerspectiveCamera(45,
-          window.innerWidth / window.innerHeight, 1, 1000);
+        // Initialize the camera the whole width & height of the window
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
       }
     </script>
   </body>
