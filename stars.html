@@ -61,6 +61,17 @@
         // at requestAnimationFrame)
         setInterval(update, 1000 / 30);
 
+        // the main update function, called 30 times a second
+
+      	function update() {
+
+      		updateParticles();
+
+      		// and render the scene from the perspective of the camera
+      		renderer.render( scene, camera );
+
+      	}
+
       }
     </script>
   </body>
