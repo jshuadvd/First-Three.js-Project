@@ -28,7 +28,7 @@
     	init();
 
       function init() {
- 
+
     	// Camera params :
     	// field of view, aspect ratio for render output, near and far clipping plane.
     	camera = new THREE.PerspectiveCamera(80, window.innerWidth/window.innerHeight, 1, 4000);
@@ -36,6 +36,9 @@
     	// move the camera backwards so we can see stuff!
     	// default position is 0,0,0.
     	camera.position.z = 1000;
+
+      scene = new THREE.Scene();
+	    scene.add(camera);
 
     </script>
   </body>
