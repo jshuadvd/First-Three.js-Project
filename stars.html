@@ -52,6 +52,15 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
+        makeParticles();
+
+        // add the mouse move listener
+        document.addEventListener('mousemove', onMouseMove, false);
+
+        // render 30 times a second (should also look
+        // at requestAnimationFrame)
+        setInterval(update, 1000 / 30);
+
       }
     </script>
   </body>
