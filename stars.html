@@ -48,7 +48,7 @@
         scene = new THREE.Scene();
         scene.add(camera);
 
-        renderer = new THREE.CanvasRenderer();
+        renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
@@ -60,6 +60,8 @@
         // render 30 times a second (should also look
         // at requestAnimationFrame)
         setInterval(update, 1000 / 30);
+
+      }
 
         // the main update function, called 30 times a second
 
@@ -135,7 +137,6 @@
           }
 
         }
-      }
     </script>
   </body>
 
