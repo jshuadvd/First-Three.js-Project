@@ -41,8 +41,11 @@
           wireframe: true,
           wireframeLinewidth: 1.53
         });
-        
+
         mesh = new THREE.Mesh(geometry, material);
+        mesh.rotation.x = 8;
+        mesh.rotation.y = 8;
+        mesh.rotation.z = 8;
         mesh.castShadow = true;
         scene.add(mesh);
 
@@ -61,6 +64,7 @@
 				// experiment with code from the snippets menu here
 
 				renderer.render( scene, camera );
+
 
 			}
 
