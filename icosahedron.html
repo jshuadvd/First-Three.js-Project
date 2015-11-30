@@ -49,14 +49,17 @@
 				renderer.shadowMapEnabled = true;
 
 				geometry = new THREE.Geometry();
+
 				for ( i = 0; i < 5000; i ++ ) {
+
 					var vertex = new THREE.Vector3();
 					vertex.x = 1000 * Math.random() - 500;
 					vertex.y = 1000 * Math.random() - 500;
 					vertex.z = 1000 * Math.random() - 500;
 					geometry.vertices.push( vertex );
+
 				}
-				material = new THREE.ParticleBasicMaterial( { size: 3, sizeAttenuation: false, transparent: true } );
+				material = new THREE.ParticleBasicMaterial( { size: 2, sizeAttenuation: false, transparent: true } );
 				material.color.setHex( 0xff00ff );
 				particles = new THREE.ParticleSystem( geometry, material );
 				particles.sortParticles = true;
