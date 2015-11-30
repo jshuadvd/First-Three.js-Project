@@ -28,11 +28,10 @@
 				renderer.setSize( W, H );
 				document.body.appendChild( renderer.domElement );
 
-				camera = new THREE.PerspectiveCamera( 50, W/H, 1, 10000 );
+				camera = new THREE.PerspectiveCamera( 50, W / H, 1, 10000 );
 				camera.position.z = 500;
 
 				scene = new THREE.Scene();
-
 
         geometry = new THREE.IcosahedronGeometry(200, 1);
         material = new THREE.MeshBasicMaterial({shading: THREE.FlatShading,
@@ -43,9 +42,8 @@
         });
 
         mesh = new THREE.Mesh(geometry, material);
-        mesh.rotation.x = 8;
-        mesh.rotation.y = 8;
-        mesh.rotation.z = 8;
+        mesh.rotation.y = 45 * Math.PI / 180;
+        mesh.rotation.z = 1;
         mesh.castShadow = true;
         scene.add(mesh);
 
@@ -54,18 +52,12 @@
 
         renderer.shadowMapEnabled = true;
 
-
 			}
 
 			function draw() {
 
 				requestAnimationFrame( draw );
-
-				// experiment with code from the snippets menu here
-
 				renderer.render( scene, camera );
-
-
 			}
 
 			setup();
