@@ -28,7 +28,7 @@
 				renderer.setSize( W, H );
 				document.body.appendChild( renderer.domElement );
 
-				camera = new THREE.PerspectiveCamera( 50, W/H, 1, 10000 );
+				camera = new THREE.PerspectiveCamera( 45, W/H, 1, 10000 );
 				camera.position.z = 500;
 
 				scene = new THREE.Scene();
@@ -39,7 +39,7 @@
 					shading: THREE.FlatShading,
 					color: 0x00d1ff,
 					wireframe: true,
-					wireframeLinewidth: 2,
+					wireframeLinewidth: 1,
 					transparent: true,
 					opacity: 1
 				});
