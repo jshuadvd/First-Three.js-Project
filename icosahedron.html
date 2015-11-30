@@ -28,36 +28,61 @@
 				renderer.setSize( W, H );
 				document.body.appendChild( renderer.domElement );
 
-				camera = new THREE.PerspectiveCamera( 50, W / H, 1, 10000 );
+				camera = new THREE.PerspectiveCamera( 50, W/H, 1, 10000 );
 				camera.position.z = 500;
 
 				scene = new THREE.Scene();
 
-        geometry = new THREE.IcosahedronGeometry(200, 1);
-        material = new THREE.MeshBasicMaterial({shading: THREE.FlatShading,
-          color: 0x00f0ff, side:
-          THREE.BackSide,
-          wireframe: true,
-          wireframeLinewidth: 1.53
-        });
 
-        mesh = new THREE.Mesh(geometry, material);
-        mesh.rotation.y = 45 * Math.PI / 180;
-        mesh.rotation.z = 1;
-        mesh.castShadow = true;
-        scene.add(mesh);
+				geometry = new THREE.IcosahedronGeometry(150, 2);
+				material = new THREE.MeshBasicMaterial({shading: THREE.FlatShading, color: 0x00d1ff, wireframe: true, wireframeLinewidth: 2, transparent: true, opacity: 1});
+				mesh = new THREE.Mesh(geometry, material);
+				mesh.scale.x = mesh.scale.y = mesh.scale.z = 1.04;
+				mesh.rotation.y = 3.88;
+				mesh.rotation.z = 2.21;
+				mesh.castShadow = true;
+				scene.add(mesh);
 
-        bg = document.body.style;
-        bg.background = '#000000';
+				bg = document.body.style;
+				bg.background = '#2d2c2c';
 
-        renderer.shadowMapEnabled = true;
+				renderer.shadowMapEnabled = true;
+
+				geometry = new THREE.Geometry();
+				for ( i = 0; i < 5000; i ++ ) {
+					var vertex = new THREE.Vector3();
+					vertex.x = 1000 * Math.random() - 500;
+					vertex.y = 1000 * Math.random() - 500;
+					vertex.z = 1000 * Math.random() - 500;
+					geometry.vertices.push( vertex );
+				}
+				material = new THREE.ParticleBasicMaterial( { size: 3, sizeAttenuation: false, transparent: true } );
+				material.color.setHex( 0xff00ff );
+				particles = new THREE.ParticleSystem( geometry, material );
+				particles.sortParticles = true;
+				scene.add( particles );
+
+
 
 			}
 
 			function draw() {
 
 				requestAnimationFrame( draw );
+
+				// experiment with code from the snippets menu here
+				mesh.rotation.x = Date.now() * 0.0005;
+				mesh.rotation.y = Date.now() * 0.0002;
+				mesh.rotation.z = Date.now() * 0.001;
+
+				particles.rotation.y = Date.now() * 0.00005;
+
 				renderer.render( scene, camera );
+
+				var time = Date.now() * 0.0005;
+				h = ( 360 * ( 1.0 + time ) % 360 ) / 360;
+				material.color.setHSL( h, 0.5, 0.5 );
+
 			}
 
 			setup();
