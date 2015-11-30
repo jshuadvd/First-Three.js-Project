@@ -35,9 +35,16 @@
 
 
 				geometry = new THREE.IcosahedronGeometry(150, 2);
-				material = new THREE.MeshBasicMaterial({shading: THREE.FlatShading, color: 0x00d1ff, wireframe: true, wireframeLinewidth: 2, transparent: true, opacity: 1});
+				material = new THREE.MeshBasicMaterial({shading: THREE.FlatShading,
+					color: 0x00d1ff,
+					wireframe: true,
+					wireframeLinewidth: 2,
+					transparent: true,
+					opacity: 1
+				});
+
 				mesh = new THREE.Mesh(geometry, material);
-				mesh.scale.x = mesh.scale.y = mesh.scale.z = 1.04;
+				mesh.scale.x = mesh.scale.y = mesh.scale.z = 1;
 				mesh.rotation.y = 3.88;
 				mesh.rotation.z = 2.21;
 				mesh.castShadow = true;
