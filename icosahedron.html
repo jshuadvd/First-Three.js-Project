@@ -35,7 +35,8 @@
 
 
 				geometry = new THREE.IcosahedronGeometry(150, 2);
-				material = new THREE.MeshBasicMaterial({shading: THREE.FlatShading,
+				material = new THREE.MeshBasicMaterial({
+					shading: THREE.FlatShading,
 					color: 0x00d1ff,
 					wireframe: true,
 					wireframeLinewidth: 2,
@@ -66,21 +67,22 @@
 					geometry.vertices.push( vertex );
 
 				}
-				material = new THREE.ParticleBasicMaterial( { size: 2, sizeAttenuation: false, transparent: true } );
+				material = new THREE.ParticleBasicMaterial( {
+					size: 2,
+					sizeAttenuation: false,
+					transparent: true
+				});
+
 				material.color.setHex( 0xff00ff );
 				particles = new THREE.ParticleSystem( geometry, material );
 				particles.sortParticles = true;
 				scene.add( particles );
-
-
-
 			}
 
 			function draw() {
 
 				requestAnimationFrame( draw );
 
-				// experiment with code from the snippets menu here
 				mesh.rotation.x = Date.now() * 0.0005;
 				mesh.rotation.y = Date.now() * 0.0002;
 				mesh.rotation.z = Date.now() * 0.001;
