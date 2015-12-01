@@ -14,12 +14,15 @@
 
 		<script src="http://brangerbriz.net/labs/threejs_playGnd/js/three.min.js"></script>
 		<script src="http://brangerbriz.net/labs/threejs_playGnd/js/Detector.js"></script>
+		<script type="text/javascript" src="dat.gui.min.js"></script>
 		<script>
 
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
 			var camera, scene, renderer;
 			var geometry, material, mesh;
+
+			
 
 			function setup() {
 
