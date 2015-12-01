@@ -33,15 +33,14 @@
 
 				scene = new THREE.Scene();
 
-
-				geometry = new THREE.IcosahedronGeometry(150, 2);
+				geometry = new THREE.IcosahedronGeometry(130, 2);
 				material = new THREE.MeshBasicMaterial({
 					shading: THREE.FlatShading,
 					color: 0x00d1ff,
 					wireframe: true,
 					wireframeLinewidth: 1,
 					transparent: true,
-					opacity: 1
+					opacity: 2
 				});
 
 				mesh = new THREE.Mesh(geometry, material);
@@ -68,7 +67,7 @@
 
 				}
 				material = new THREE.ParticleBasicMaterial( {
-					size: 2,
+					size: 4,
 					sizeAttenuation: false,
 					transparent: true
 				});
