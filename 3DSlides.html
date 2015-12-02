@@ -14,29 +14,7 @@
 
 		<script src="http://brangerbriz.net/labs/threejs_playGnd/js/three.min.js"></script>
 		<script src="http://brangerbriz.net/labs/threejs_playGnd/js/Detector.js"></script>
-		<script type="text/javascript" src="dat.gui.js"></script>
 		<script>
-
-			/* -------------------- DAT GUI -------------------- */
-
-			// var FizzyText = function() {
-		  // this.message = 'dat.gui';
-		  // this.speed = 0.8;
-		  // this.displayOutline = false;
-		  // this.explode = function() { };
-			//
-			// };
-			//
-			// window.onload = function() {
-			//   var text = new FizzyText();
-			//   var gui = new dat.GUI();
-			//   gui.add(text, 'message');
-			//   gui.add(text, 'speed', -5, 5);
-			//   gui.add(text, 'displayOutline');
-			//   gui.add(text, 'explode');
-			// };
-
-			/* -------------------- BEGIN THREE.JS -------------------- */
 
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
@@ -55,20 +33,21 @@
 
 				scene = new THREE.Scene();
 
-				geometry = new THREE.IcosahedronGeometry(130, 2);
+				geometry = new THREE.PlaneGeometry(500, 500, 20);
 				material = new THREE.MeshBasicMaterial({
 					shading: THREE.FlatShading,
 					color: 0x00d1ff,
+					side: THREE.DoubleSide,
 					wireframe: true,
-					wireframeLinewidth: 1,
+					wireframeLinewidth: 2,
 					transparent: true,
 					opacity: 2
 				});
 
 				mesh = new THREE.Mesh(geometry, material);
 				mesh.scale.x = mesh.scale.y = mesh.scale.z = 1;
-				mesh.rotation.y = 3.88;
-				mesh.rotation.z = 2.21;
+				mesh.rotation.y = 0;
+				mesh.rotation.z = 0;
 				mesh.castShadow = true;
 				scene.add(mesh);
 
@@ -102,11 +81,20 @@
 
 			function draw() {
 
+				var size = 100;
+				var step = 16;
+
+				var gridHelper = new THREE.GridHelper( size, step );
+				scene.add( gridHelper );
+
+				var axisHelper = new THREE.AxisHelper( 500 );
+				scene.add( axisHelper );
+
 				requestAnimationFrame( draw );
 
-				mesh.rotation.x = Date.now() * 0.0005;
-				mesh.rotation.y = Date.now() * 0.0002;
-				mesh.rotation.z = Date.now() * 0.001;
+				// mesh.rotation.x = Date.now() * 0.0005;
+				// mesh.rotation.y = Date.now() * 0.0002;
+				// mesh.rotation.z = Date.now() * 0.001;
 
 				particles.rotation.y = Date.now() * 0.00005;
 
@@ -114,7 +102,7 @@
 
 				var time = Date.now() * 0.0005;
 				h = ( 360 * ( 1.0 + time ) % 360 ) / 360;
-				material.color.setHSL( h, 0.5, 0.5 );
+				// material.color.setHSL( h, 0.5, 0.5 );
 
 			}
 
